@@ -1,0 +1,15 @@
+body{
+    background-image: url("/images/bg-form-bao-cao-thi.jpeg");
+}
+.panel-thankyou{
+    background: #fff;
+    min-height: 500px;
+    border-radius: 15px;
+}
+.success-msg{
+    font-size: 40px;
+    margin-top: 0;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ff9000;
+}

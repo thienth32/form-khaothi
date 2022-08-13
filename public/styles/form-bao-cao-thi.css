@@ -1,0 +1,16 @@
+body{
+    background-image: url("/images/bg-form-bao-cao-thi.jpeg");
+}
+.card-form{
+    background: #fff;
+    border-radius: 10px;
+}
+.flatpickr-monthDropdown-months{
+    font-size: 17px!important;
+}
+.numInput.cur-year{
+    font-size: 17px!important;
+}
+label.error{
+    color: #DC3444;
+}
