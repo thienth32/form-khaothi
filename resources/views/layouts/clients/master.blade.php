@@ -13,54 +13,8 @@
     @yield('style-custom')
 </head>
 <body>
-    <!-- Navbar -->
-{{--    <nav class="navbar navbar-expand-lg bg-fpt-orange navbar-dark fixed-top ">--}}
-{{--        <!-- Container wrapper -->--}}
-{{--        <div class="container-fluid">--}}
-{{--            <!-- Navbar brand -->--}}
-{{--            <a class="navbar-brand" href="#">Phòng Khảo thí - Fpoly Hà Nội</a>--}}
-{{--            <!-- Toggle button -->--}}
-{{--            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">--}}
-{{--                <i class="fas fa-bars"></i>--}}
-{{--            </button>--}}
-{{--            <!-- Collapsible wrapper -->--}}
-{{--            <div class="collapse navbar-collapse" id="navbarSupportedContent">--}}
-{{--                <ul class="navbar-nav me-auto mb-2 mb-lg-0">--}}
 
-{{--                    <!-- Link -->--}}
-{{--                    <li class="nav-item">--}}
-{{--                        <a class="nav-link" href="{{route('form.baocaothi')}}">Nộp báo cáo thi</a>--}}
-{{--                    </li>--}}
-{{--                    <!-- Link -->--}}
-{{--                    <li class="nav-item">--}}
-{{--                        <a class="nav-link" href="{{route('form.lichsubaocao')}}">Lịch sử báo cáo thi</a>--}}
-{{--                    </li>--}}
-{{--                </ul>--}}
-{{--                <ul class="navbar-nav mb-2 mb-lg-0 justify-content-end">--}}
-{{--                    @guest--}}
-{{--                        <li class="nav-item">--}}
-{{--                            <a class="nav-link" href="{{route('login')}}">Đăng nhập</a>--}}
-{{--                        </li>--}}
-{{--                    @endguest--}}
-{{--                    @auth--}}
-{{--                            <li class="nav-item dropdown">--}}
-{{--                                <a class="nav-link dropdown-toggle" href="#" role="button" data-mdb-toggle="dropdown" aria-expanded="false">--}}
-{{--                                    Xin chào, {{\Illuminate\Support\Facades\Auth::user()->name}}--}}
-{{--                                </a>--}}
-{{--                                <!-- Dropdown menu -->--}}
-{{--                                <ul class="dropdown-menu" >--}}
-{{--                                    <li>--}}
-{{--                                        <a class="dropdown-item" href="{{route('logout')}}">Đăng xuất</a>--}}
-{{--                                    </li>--}}
-{{--                                </ul>--}}
-{{--                            </li>--}}
-{{--                    @endauth--}}
-{{--                </ul>--}}
-{{--        </div>--}}
-{{--    </div>--}}
-{{--    <!-- Container wrapper -->--}}
-{{--</nav>--}}
-<!-- Navbar -->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg bg-fpt-orange fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Khảo thí _ FPL Hà Nội</a>
