@@ -1,0 +1,12 @@
+body{
+    background-image: url("/images/bg-lich-su-thi-white.png");
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-size: contain;
+}
+
+.main-content{
+    min-height: 650px;
+    background: rgba(255, 255, 255, 0.7);
+    margin-top: 100px;
+}

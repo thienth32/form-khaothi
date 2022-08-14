@@ -43,8 +43,8 @@ class FormBaoCaoThiController extends Controller
             $model = new LuotBaoCaoThi();
         }
         $model->fill($request->all());
+        $model->email_gv = Auth::user()->email;
         $model->file_10b = $filePath;
-        $model->nguoi_gui = Auth::user()->email;
         $model->ngay_thi = $ngaythi;
         $model->save();
         return redirect(route('form.thanhcong'));
@@ -52,5 +52,31 @@ class FormBaoCaoThiController extends Controller
 
     public function thanhCong(){
         return view('form.baocaothi-thanhcong');
+    }
+
+    public function lichSuBaoCao(){
+        $user = Auth::user();
+        $dotthi = DotThi::where('status', 1)->first();
+        $ketqua = LuotBaoCaoThi::where('email_gv', $user->email)
+                        ->where('dot_thi_id', $dotthi->id)
+                        ->orderByDesc('ngay_thi')
+                        ->orderBy('ca_thi')->get();
+        $ketqua->load('monhoc');
+        return view('form.baocaothi-lichsu', compact('ketqua', 'dotthi'));
+
+    }
+
+    public function taiFileBaocao($luotbaocao){
+        $luotBaoCao = LuotBaoCaoThi::find($luotbaocao);
+        $fileInfo = pathinfo($luotBaoCao->file_10b);
+        $ext = $fileInfo['extension'];
+        $downloadFileName = $luotBaoCao->ten_lop . '_'. $luotBaoCao->ngay_thi . "_ca-" . $luotBaoCao->ca_thi . '.' .$ext;
+        $googleDisk = Storage::disk('google');
+        $file  = $googleDisk->get($luotBaoCao->file_10b);
+        return response()->streamDownload(function() use ($file){
+            echo $file;
+        }, $downloadFileName);
+//        dd($path);
+
     }
 }

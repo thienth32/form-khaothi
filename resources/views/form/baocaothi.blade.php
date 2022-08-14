@@ -14,7 +14,7 @@
                     <div class="row">
                         <div class="mb-3 col-md-6">
                             <label class="form-label" for="email">Email<span class="text-danger">*</span></label>
-                            <input class="form-control" value="{{\Illuminate\Support\Facades\Auth::user()->email}}" id="email" name="email_gv" type="email" placeholder="Email" data-sb-validations="email,required" />
+                            <input class="form-control" disabled value="{{\Illuminate\Support\Facades\Auth::user()->email}}" id="email" type="email" placeholder="Email" data-sb-validations="email,required" />
                         </div>
                     </div>
                     <div class="row">
@@ -123,6 +123,7 @@
     <script src="https://npmcdn.com/flatpickr/dist/l10n/vn.js"></script>
     <script>
         const monhoc = @json($monhoc);
+
         $(document).ready(function(){
             $('#ngayThi').flatpickr({
                 disableMobile: true,
@@ -143,7 +144,8 @@
                         required: true
                     },
                     file_excel: {
-                        required: true
+                        required: true,
+                        extension: "xls|xlsx"
                     },
                     so_sv_thi: {
                         required: true
@@ -173,7 +175,8 @@
                         required: "Hãy nhập tên lớp"
                     },
                     file_excel: {
-                        required: "Hãy chọn file điểm 10b"
+                        required: "Hãy chọn file điểm 10b",
+                        extension: "Chọn đúng định dạng file excel (xls|xlsx)"
                     },
                     so_sv_thi: {
                         required: "Chưa nhập số sinh viên thi"
