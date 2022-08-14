@@ -24,7 +24,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{route('form.lichsubaocao')}}">Lịch sử báo cáo thi</a>
+                        <a class="nav-link active" aria-current="page" href="{{route('form.lichsu')}}">Lịch sử báo cáo thi</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{route('form.baocaothi')}}">Gửi báo cáo mới</a>
