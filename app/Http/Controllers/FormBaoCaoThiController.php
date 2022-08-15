@@ -43,6 +43,7 @@ class FormBaoCaoThiController extends Controller
             $model = new LuotBaoCaoThi();
         }
         $model->fill($request->all());
+        $model->dot_thi_id = $dotthi->id;
         $model->email_gv = Auth::user()->email;
         $model->file_10b = $filePath;
         $model->ngay_thi = $ngaythi;
