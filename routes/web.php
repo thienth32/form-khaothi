@@ -28,3 +28,9 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('lich-su-bao-cao-thi', [\App\Http\Controllers\FormBaoCaoThiController::class, 'lichSuBaoCao'])->name('form.lichsu');
     Route::get('tai-file-bao-cao-thi/{luotbaocao}', [\App\Http\Controllers\FormBaoCaoThiController::class, 'taiFileBaocao'])->name('form.taifilebaocao');
 });
+
+Route::view('layout', 'layouts.admin.master');
+Route::group(['middleware' => 'admin_role', 'prefix' => 'admin'], function (){
+    Route::redirect('/', 'dashboard');
+    Route::get('dashboard', [\App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
+});

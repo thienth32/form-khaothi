@@ -16,6 +16,11 @@
                             <i class="fab fa-google-plus-square" aria-hidden="true"></i>
                             Đăng nhập với tài khoản google
                         </a>
+                        @if (session('msg'))
+                            <p class="text-danger msg-err">
+                                {{ session('msg') }}
+                            </p>
+                        @endif
                     </div>
                 </div>
 
