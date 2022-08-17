@@ -13,11 +13,8 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('dot_thi', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->integer('status')->default(0);
-            $table->timestamps();
+        Schema::table('mon_hoc', function (Blueprint $table) {
+            $table->string('ma_mon_hoc');
         });
     }
 
@@ -28,6 +25,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dot_thi');
+        Schema::table('mon_hoc', function (Blueprint $table) {
+            $table->dropColumn('ma_mon_hoc');
+        });
     }
 };

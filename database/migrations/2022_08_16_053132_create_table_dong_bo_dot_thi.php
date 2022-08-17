@@ -13,10 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('dot_thi', function (Blueprint $table) {
+        Schema::create('dong_bo_dot_thi', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('status')->default(0);
+            $table->unsignedBigInteger('dot_thi_id');
+            $table->integer('luot_dong_bo')->default(1);
+            $table->string('sheet_id');
+
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dot_thi');
+        Schema::dropIfExists('dong_bo_dot_thi');
     }
 };

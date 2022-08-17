@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('dot_thi', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->integer('status')->default(0);
-            $table->timestamps();
+        Schema::table('dong_bo_dot_thi', function (Blueprint $table) {
+            $table->unsignedBigInteger('nguoi_thuc_hien');
+            $table->integer('so_ban_ghi');
         });
     }
 
@@ -28,6 +26,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dot_thi');
+        Schema::table('dong_bo_dot_thi', function (Blueprint $table) {
+            $table->dropColumn('nguoi_thuc_hien');
+            $table->dropColumn('so_ban_ghi');
+        });
     }
 };

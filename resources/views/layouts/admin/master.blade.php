@@ -46,6 +46,30 @@ License: For each use you must have a valid license purchased only from above li
             <!--begin::Header-->
             @include('layouts.admin._partials.header')
             <!--end::Header-->
+            <div class="toolbar" id="kt_toolbar">
+                <!--begin::Container-->
+                <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
+                    <!--begin::Page title-->
+                    <div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+                        <!--begin::Title-->
+                        <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">@yield('module-name', 'Trang Quản Trị')</h1>
+                        <!--end::Title-->
+                        <!--begin::Separator-->
+                        <span class="h-20px border-gray-300 border-start mx-4"></span>
+                        <!--end::Separator-->
+                        <ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
+                            <!--begin::Item-->
+                            <li class="breadcrumb-item text-muted">
+                                <a href="javascript:;" class="text-muted text-hover-primary">@yield('page-name', 'index')</a>
+                            </li>
+                            <!--end::Item-->
+
+                        </ul>
+                    </div>
+                    <!--end::Page title-->
+                </div>
+                <!--end::Container-->
+            </div>
             <!--begin::Content-->
             <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
                 <!--begin::Post-->

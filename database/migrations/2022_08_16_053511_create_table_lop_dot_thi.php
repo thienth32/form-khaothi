@@ -13,10 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('dot_thi', function (Blueprint $table) {
+        Schema::create('lop_dot_thi', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('status')->default(0);
+            $table->integer('bo_mon_id');
+            $table->integer('giang_vien_id');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dot_thi');
+        Schema::dropIfExists('lop_dot_thi');
     }
 };

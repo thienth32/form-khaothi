@@ -33,4 +33,9 @@ Route::view('layout', 'layouts.admin.master');
 Route::group(['middleware' => 'admin_role', 'prefix' => 'admin'], function (){
     Route::redirect('/', 'dashboard');
     Route::get('dashboard', [\App\Http\Controllers\DashboardController::class, 'index'])->name('dashboard');
+    Route::group(['prefix' => 'dot-thi'], function (){
+       Route::get('', [\App\Http\Controllers\DotThiController::class, 'index'])->name('dotthi.index');
+       Route::get('tao-moi', [\App\Http\Controllers\DotThiController::class, 'addForm'])->name('dotthi.add');
+       Route::post('tao-moi', [\App\Http\Controllers\DotThiController::class, 'saveAdd']);
+    });
 });

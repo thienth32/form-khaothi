@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('dot_thi', function (Blueprint $table) {
+        Schema::create('mon_dot_thi', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('status')->default(0);
+            $table->unsignedBigInteger('dot_thi_id');
+            $table->unsignedBigInteger('mon_hoc_id');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dot_thi');
+        Schema::dropIfExists('mon_dot_thi');
     }
 };
