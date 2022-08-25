@@ -3,12 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Events\GetDataDotThiProcessed;
+use App\Models\DongBoDotThi;
 use App\Models\DotThi;
 use Illuminate\Http\Request;
 
 class DotThiController extends Controller
 {
     public function index(){
+        $dotthi = DotThi::all();
+        $dotthi->load('dong_bo_dot_thi', 'luot_bao_cao');
+
+        return view('admin.dotthi.index', compact('dotthi'));
 
     }
 
@@ -49,6 +54,7 @@ class DotThiController extends Controller
         $model->sheet_id = $request->sheet_id;
         $model->save();
         GetDataDotThiProcessed::dispatch($model);
-        return view('admin.dotthi.index')->with('msg', 'Tạo đợt thi thành công, hệ thống đang đồng bộ dữ liệu từ google sheet');
+//        return view('admin.dotthi.index')->with('msg', 'Tạo đợt thi thành công, hệ thống đang đồng bộ dữ liệu từ google sheet');
+        return redirect(route('dotthi.index'))->with('msg', 'Tạo đợt thi thành công, hệ thống đang đồng bộ dữ liệu từ google sheet');
     }
 }
