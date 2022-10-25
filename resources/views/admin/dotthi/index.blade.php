@@ -17,6 +17,11 @@
                 </th>
                 </thead>
                 <tbody>
+                @isset($delete)
+                    <div class="alert alert-success" role="alert">
+                        {{$delete}}
+                    </div>
+                @endisset
                 @foreach($dotthi as $dt)
                     <tr>
                         <td>{{$dt->name}}</td>
@@ -50,10 +55,10 @@
                                 </span>
                                 <!--end::Svg Icon-->
                             </button>
-                            <a href="" class="btn btn-sm btn-info" title="Chỉnh sửa">
+                            <a href="{{route('dotthi.edit')}}?id={{ $dt->id }}" class="btn btn-sm btn-info" title="Chỉnh sửa">
                                 <i class="fa fa-pencil-alt"></i>
                             </a>
-                            <a href="" class="btn btn-sm btn-danger" title="Xóa">
+                            <a href="{{route('dotthi.delete')}}?id={{ $dt->id }}" class="btn btn-sm btn-danger" title="Xóa">
                                 <i class="fa fa-trash"></i>
                             </a>
                         </td>
