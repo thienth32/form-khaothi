@@ -29,17 +29,17 @@ class DotThiController extends Controller
                 'sheet_id' => [
                     'required',
                     'unique:dot_thi',
-//                    function($attribute, $value, $fail){
-//                        try {
-//                            $client = getGooogleClient();
-//                            $service = new \Google_Service_Sheets($client);
-//                            $range = 'KH thi Block 1!A2:D';
-//                            $spreadsheetId = $value;
-//                            $service->spreadsheets_values->get($spreadsheetId, $range);
-//                        }catch(\Google_Exception $ex){
-//                            $fail('Google Sheet Id không tồn tại, vui lòng kiểm tra lại');
-//                        }
-//                    }
+                    function($attribute, $value, $fail){
+                        try {
+                            $client = getGooogleClient();
+                            $service = new \Google_Service_Sheets($client);
+                            $range = 'KH thi Block 1!A2:D';
+                            $spreadsheetId = $value;
+                            $service->spreadsheets_values->get($spreadsheetId, $range);
+                        }catch(\Google_Exception $ex){
+                            $fail('Google Sheet Id không tồn tại, vui lòng kiểm tra lại');
+                        }
+                    }
                 ]
             ],
             [
@@ -49,12 +49,12 @@ class DotThiController extends Controller
                 'sheet_id.unique' => "Trùng sheet id của đợt thi khác",
             ]
         );
-//        $model = new DotThi();
-//        $model->name = $request->name;
-//        $model->sheet_id = $request->sheet_id;
-//        $model->save();
-//        GetDataDotThiProcessed::dispatch($model);
-//        return view('admin.dotthi.index')->with('msg', 'Tạo đợt thi thành công, hệ thống đang đồng bộ dữ liệu từ google sheet');
+        $model = new DotThi();
+        $model->name = $request->name;
+        $model->sheet_id = $request->sheet_id;
+        $model->save();
+        GetDataDotThiProcessed::dispatch($model);
+        return view('admin.dotthi.index')->with('msg', 'Tạo đợt thi thành công, hệ thống đang đồng bộ dữ liệu từ google sheet');
             return redirect(route('dotthi.index'))->with('msg', 'Tạo đợt thi thành công, hệ thống đang đồng bộ dữ liệu từ google sheet');
     }
 
@@ -100,4 +100,26 @@ class DotThiController extends Controller
             return redirect(route('dotthi.index'));
         }
     }
+
+    public function index_ky_hoc(){
+        return view('admin.kyhoc.index');
+    }
+
+    public function add_ky_hoc(){
+        return view('admin.kyhoc.add_ky_hoc');
+    }
+
+    public function new_ky_hoc(request $request){
+        $request->validate(
+            ['name_ky_hoc'=> 'required|min:6',
+            ],
+            [
+                'required' => 'Không để trống tên kỳ học',
+                'min' => 'Chiều dài tối thiểu :min kí tự'
+            ]
+        );
+
+
+    }
+
 }

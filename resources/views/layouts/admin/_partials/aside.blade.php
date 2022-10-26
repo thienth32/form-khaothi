@@ -63,7 +63,7 @@
                     </a>
                 </div>
                 <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
-                    <a href="{{route('dashboard')}}" class="menu-link">
+                    <a href="{{route('ky_hoc.add')}}" class="menu-link">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
                             <span class="svg-icon svg-icon-2">
@@ -79,7 +79,7 @@
                     </a>
                 </div>
                 <div data-kt-menu-trigger="click" class="menu-item here show menu-accordion">
-                    <a href="{{route('admin.quanlifuge')}}" class="menu-link">
+                    <a href="{{route('quanlifuge')}}" class="menu-link">
                         <span class="menu-icon">
                             <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
                             <span class="svg-icon svg-icon-2">

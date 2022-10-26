@@ -16,4 +16,5 @@ class DashboardController extends Controller
 //        dd($user);
         return view('admin.quanli.list',compact('user'));
     }
+
 }
