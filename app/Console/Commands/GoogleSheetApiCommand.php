@@ -29,6 +29,8 @@ class GoogleSheetApiCommand extends Command
      */
     public function handle()
     {
+        //hau
+        //heloo
 //        Log::debug('start update sheet 1 data');
 //        $client = $this->getGooogleClient();
 //        $service = new Google_Service_Sheets($client);

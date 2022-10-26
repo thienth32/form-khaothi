@@ -16,6 +16,10 @@
                             <i class="fab fa-google-plus-square" aria-hidden="true"></i>
                             Đăng nhập với tài khoản google
                         </a>
+                        <a class="btn" href="{{route('login.fake')}}" style="background: #FFC210; color: #fff; text-transform: uppercase">
+                            <i class="fab fa-google-plus-square" aria-hidden="true"></i>
+                            Đăng nhập fake
+                        </a>
                         @if (session('msg'))
                             <p class="text-danger msg-err">
                                 {{ session('msg') }}
